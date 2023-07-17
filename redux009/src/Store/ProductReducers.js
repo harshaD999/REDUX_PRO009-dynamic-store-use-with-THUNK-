@@ -9,7 +9,7 @@ const initialState = {
 };
 
 const ProductReducers = (state = initialState, action) => {
-
+/************************GET PRODUCT******************** */
     switch (action.type) {
         case "FETCH_START":
             return {
@@ -40,8 +40,8 @@ const ProductReducers = (state = initialState, action) => {
                 error: action.payload
             };
 
-/************************DELET PRODUCT******************** */
 
+/************************DELET PRODUCT******************** */
         case "DELET_PRODUCT":
             return {
                 ...state,
@@ -54,6 +54,8 @@ const ProductReducers = (state = initialState, action) => {
                 deleteMessage: action.payload
             };
 
+
+/************************GET SINGLE PRODUCT******************** */
         case "GET_SINGLE_PRODUCT":
             return {
                 ...state,

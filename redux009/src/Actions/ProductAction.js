@@ -90,7 +90,6 @@ export const editProduct = (pid) => {
             })
         }
 };
-
 export const updateProduct = (params) => {
     return dispatch=>{ 
         dispatch({type:"API_START"});  

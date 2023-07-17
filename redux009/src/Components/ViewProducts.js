@@ -5,7 +5,7 @@ import { DeleteProducts, editProduct, getProducts } from '../Actions/ProductActi
 
 const ViewProducts = () => {
 
-
+    //Take Varible From Product Reducers
     let { loading, data, error } = useSelector((state) => state.product);
 
     const dispatch = useDispatch();
@@ -28,16 +28,23 @@ const ViewProducts = () => {
         </>);
     }
 
+
+
+    //HandleDelet Method----------    
     const handleDelete = (pid) => {
         dispatch(DeleteProducts(pid));
     };
 
+
+
+    //Handle Edit Method----------    
     const handleEdit = (pid) => {
         dispatch(editProduct(pid));
     };
 
 
-
+    
+    //return Strat Here:-----------
     return (<>
 
         <h1 style={{ color: "red" }}>-View Product Page-</h1>
@@ -60,7 +67,7 @@ const ViewProducts = () => {
                         <td>{obj.pname}</td>
                         <td>{obj.added_datetime}</td>
                         <td><button style={{ backgroundColor: "lightslategrey", color: "white", fontWeight: "bolder" }} type="button" onClick={(e) => handleDelete(obj.pid)}>X</button>
-                        <button style={{ backgroundColor: "lightslategrey", color: "white", fontWeight: "bolder" }} type="button" onClick={(e) => handleEdit(obj.pid)}>Edit</button></td>
+                            <button style={{ backgroundColor: "lightslategrey", color: "white", fontWeight: "bolder" }} type="button" onClick={(e) => handleEdit(obj.pid)}>Edit</button></td>
                     </tr>
                 })}
             </tbody>

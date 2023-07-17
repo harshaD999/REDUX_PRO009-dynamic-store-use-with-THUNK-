@@ -14,11 +14,11 @@ const ViewEmployee = () => {
         dispatch(getEmployee());
     }, [dispatch]);
 
-    if (loading) {
-        return (<>
-            <h2>Loading...</h2>
-        </>);
-    }
+    // if (loading) {
+    //     return (<>
+    //         <h2>Loading...</h2>
+    //     </>);
+    // }
 
     if (error != "") {
         return (<>
@@ -58,8 +58,7 @@ const ViewEmployee = () => {
                         <td>
                             <button style={{ backgroundColor: "lightslategrey", color: "white", fontWeight: "bolder" }} type="button" onClick={(e)=>handleDelet(obj.eid)}>x</button>
                         
-                            <button style={{ backgroundColor: "lightslategrey", color: "white", fontWeight: "bolder" }} type="button" onClick={(e)=>handleEdit(obj.eid)}>Edit</button>
-                        
+                            <button style={{ backgroundColor: "lightslategrey", color: "white", fontWeight: "bolder" }} type="button" onClick={(e)=>handleEdit(obj.eid)}>Edit</button>                       
                         </td>
                     </tr>
                 })}
